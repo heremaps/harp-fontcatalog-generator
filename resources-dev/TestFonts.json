@@ -1,0 +1,15 @@
+{
+    "name": "Test",
+    "size": 32,
+    "distance": 8,
+    "type": "msdf",
+    "fontsDir": "../fonts",
+    "fonts": [
+        {
+            "name": "NotoSans-Regular",
+            "blocks": [
+                "Basic Latin"
+            ]
+        }
+    ]
+}

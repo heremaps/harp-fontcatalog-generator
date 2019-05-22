@@ -1,0 +1,8 @@
+node_modules/
+resources-dev/
+test/
+.gitignore
+.travis.yml
+tsconfig.json
+*.ts
+*.map

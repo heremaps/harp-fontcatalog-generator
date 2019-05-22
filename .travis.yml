@@ -1,0 +1,21 @@
+language: node_js
+dist: xenial
+node_js:
+- '10'
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
+jobs:
+  - name: "Test"
+    script: |
+      set -ex
+      yarn run test
+deploy:
+  - provider: script
+    script: ./scripts/publish-packages.sh
+    skip_cleanup: true
+    on:
+      tags: true
+      branch: master

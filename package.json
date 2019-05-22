@@ -1,0 +1,46 @@
+{
+  "name": "@here/harp-fontcatalog-generator",
+  "version": "0.1.0",
+  "description": "Scripts used to generate a font catalog for harp.gl",
+  "scripts": {
+    "test": "ts-node ./scripts/harp-fontcatalog-generator.ts -i ./resources-dev/TestFonts.json -o ./test/resources && ts-mocha $EXTRA_MOCHA_ARGS ./test/*Test.ts",
+    "prepare": "tsc --sourceMap false",
+    "prepack": "chmod +x ./scripts/harp-fontcatalog-generator.js"
+  },
+  "bin": "./scripts/harp-fontcatalog-generator.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/heremaps/harp-fontcatalog-generator.git"
+  },
+  "author": {
+    "name": "HERE Europe B.V.",
+    "url": "https://here.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=9.11.1",
+    "npm": ">=5.8.0",
+    "yarn": ">=1.11.1"
+  },
+  "dependencies": {
+    "fontkit": "^1.8.0",
+    "minimist": "^1.2.0",
+    "mkpath": "^1.0.0",
+    "msdf-bmfont-xml": "^2.3.6",
+    "unicode-range-json": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^12.0.0",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^6.1.4",
+    "ts-mocha": "^6.0.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.2.1"
+  }
+}
