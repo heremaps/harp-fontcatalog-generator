@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
-  * Copyright (C) 2018-2019 HERE Europe B.V.
-  * Licensed under Apache 2.0, see full license in LICENSE
-  * SPDX-License-Identifier: Apache-2.0
-  */
+ * Copyright (C) 2018-2019 HERE Europe B.V.
+ * Licensed under Apache 2.0, see full license in LICENSE
+ * SPDX-License-Identifier: Apache-2.0
+ */
 /**
  * Script designed to generate the TextCanvas' FontCatalog assets.
  * Usage: harp-fontcatalog-generator -- -i <inputFile> -o <outputDir>
@@ -20,6 +20,11 @@ const generateBMFont = require("msdf-bmfont-xml");
 // tslint:enable
 
 // tslint:disable:no-console
+let isVerbose = false;
+let runningHandle: number | undefined;
+function isRunning() {
+    console.log("\n[Process Still Running - Please Wait]");
+}
 
 interface UnicodeBlock {
     name: string;
@@ -103,6 +108,9 @@ async function createReplacementAssets(outputPath: string): Promise<void> {
         charset: ""
     };
 
+    if (isVerbose) {
+        runningHandle = (setInterval(isRunning, 60000) as unknown) as number;
+    }
     await new Promise((resolve, reject) => {
         const assetsDir = path.resolve(outputPath, `${fontCatalog.name}_Assets/`);
         sdfOptions.filename = "Specials";
@@ -114,6 +122,9 @@ async function createReplacementAssets(outputPath: string): Promise<void> {
         generateBMFont(fontPath, sdfOptions, (error: any, textures: any, rawJson: any) => {
             if (error) {
                 reject(error);
+                if (isVerbose) {
+                    clearInterval(runningHandle);
+                }
                 return;
             }
 
@@ -141,6 +152,9 @@ async function createReplacementAssets(outputPath: string): Promise<void> {
             resolve();
         });
     });
+    if (isVerbose) {
+        clearInterval(runningHandle);
+    }
 
     // If suceeded, register this block in the fontCatalog.
     const blockEntry = fontCatalog.supportedBlocks.find((element: any) => {
@@ -170,6 +184,9 @@ async function createBlockAssets(
     italic: boolean,
     outputPath: string
 ): Promise<void> {
+    if (isVerbose) {
+        runningHandle = (setInterval(isRunning, 60000) as unknown) as number;
+    }
     await new Promise((resolve, reject) => {
         const assetSuffix =
             bold === true
@@ -209,16 +226,23 @@ async function createBlockAssets(
             const blockSupport =
                 supportedCharset.length / (unicodeBlock.range[1] - unicodeBlock.range[0] + 1);
 
-            console.log(`INFO: Generating ${assetType} assets for block: ${unicodeBlock.category}`);
-            console.log(
-                `INFO: Code point support ${(blockSupport * 100).toFixed(3)}% (${
-                    supportedCharset.length
-                }/${unicodeBlock.range[1] - unicodeBlock.range[0] + 1})`
-            );
+            if (isVerbose) {
+                console.log(
+                    `INFO: Generating ${assetType} assets for block: ${unicodeBlock.category}`
+                );
+                console.log(
+                    `INFO: Code point support ${(blockSupport * 100).toFixed(3)}% (${
+                        supportedCharset.length
+                    }/${unicodeBlock.range[1] - unicodeBlock.range[0] + 1})`
+                );
+            }
 
             generateBMFont(fontPath, sdfOptions, (error: any, textures: any, rawJson: any) => {
                 if (error) {
                     reject(error);
+                    if (isVerbose) {
+                        clearInterval(runningHandle);
+                    }
                     return;
                 }
 
@@ -253,6 +277,9 @@ async function createBlockAssets(
             });
         }
     });
+    if (isVerbose) {
+        clearInterval(runningHandle);
+    }
 }
 
 async function createFontAssets(
@@ -272,7 +299,9 @@ async function createFontAssets(
             : italic === true
             ? font.italic
             : font.name;
-    console.log("INFO: Generating assets for font: " + fontVariant);
+    if (isVerbose) {
+        console.log("INFO: Generating assets for font: " + fontVariant);
+    }
 
     // Generate an individual BMFont asset for each unicode block supported by this font.
     const fontUnicodeBlockNames =
@@ -323,6 +352,11 @@ async function createFontAssets(
 
 async function main() {
     const args = minimist(process.argv.slice(2));
+
+    // Check for verbosity.
+    if (args.v !== undefined) {
+        isVerbose = true;
+    }
 
     // Process input an output.
     let inputPath: string;
