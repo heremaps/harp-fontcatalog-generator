@@ -3,7 +3,7 @@
     "size": 32,
     "distance": 8,
     "type": "msdf",
-    "fontsDir": "../fonts",
+    "fontsDir": "../../resources",
     "fonts": [
         {
             "name": "NotoSans-Regular",

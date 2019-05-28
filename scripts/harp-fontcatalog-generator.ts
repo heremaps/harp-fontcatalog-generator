@@ -92,7 +92,7 @@ for (const unicodeBlock of unicodeBlocks) {
 }
 
 async function createReplacementAssets(outputPath: string): Promise<void> {
-    const fontPath = path.resolve(__dirname, `../resources-dev/fonts/NotoSans-Regular.ttf`);
+    const fontPath = path.resolve(__dirname, `../resources/NotoSans-Regular.ttf`);
     const fontInfo = fontkit.openSync(fontPath);
     const fontObject = {
         name: "Extra",
