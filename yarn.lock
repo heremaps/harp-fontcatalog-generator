@@ -894,7 +894,7 @@ growl@1.10.5:
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
   integrity sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
 
-handlebars@^4.1.0:
+handlebars@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
   integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
@@ -1139,10 +1139,10 @@ map-limit@0.0.1:
   dependencies:
     once "~1.3.0"
 
-maxrects-packer@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/maxrects-packer/-/maxrects-packer-2.0.2.tgz#511ea53adb1e128fe3d907c3e695ee878887c879"
-  integrity sha512-tGibChPu097Osz4zgkSpKBBZ0yP8/kfiNU1NR/IQkAdgIw5mO6RvzR9R3IckaGltNUULRRWRXSgUI0mNc4lODQ==
+maxrects-packer@^2.0.3:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/maxrects-packer/-/maxrects-packer-2.1.0.tgz#d922ac5f0b090df8839d5934a2fc159a2df3b1d8"
+  integrity sha512-L9Fmvgu9TOWVKu4fm19Fk/phOeLK0eudWXduhmN+S9dUwXotEZf5DVHnX3FH5x/SbN9BcIsYlrdKW1ZNiKs/zA==
 
 mem@^4.0.0:
   version "4.3.0"
@@ -1245,20 +1245,20 @@ ms@2.1.1, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-msdf-bmfont-xml@^2.3.6:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/msdf-bmfont-xml/-/msdf-bmfont-xml-2.4.0.tgz#33f63ebfcd5071d7237993f3bcd2eb3735b5300b"
-  integrity sha512-0zIo1xKJCk9I2Xrv6gaX0iXfH+MNYOUZ/BILABnwccV+eZfW+GINf6yFaos7ubLpScuFZIc6c/X2oQPwe84Xtg==
+msdf-bmfont-xml@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/msdf-bmfont-xml/-/msdf-bmfont-xml-2.4.2.tgz#0f91cb09213923a38eef7f677ce52ea559b8d798"
+  integrity sha512-/evbkVABoR5hDZkz8eVVS41Mteym+npn+rktZmqF7U5ud9IH2uVE1/aburIB/FuTPR7+0WsEzv7Rw2jDb+KGjA==
   dependencies:
     arabic-persian-reshaper "^1.0.0"
     cli-progress "^2.1.1"
     commander "^2.19.0"
-    handlebars "^4.1.0"
+    handlebars "^4.1.2"
     is-invalid-path "^1.0.2"
     jimp "^0.6.0"
     js2xmlparser "^4.0.0"
     map-limit "0.0.1"
-    maxrects-packer "^2.0.1"
+    maxrects-packer "^2.0.3"
     opentype.js "^0.11.0"
 
 neo-async@^2.6.0:
