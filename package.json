@@ -1,6 +1,6 @@
 {
   "name": "@here/harp-fontcatalog-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
     "test": "ts-node ./scripts/harp-fontcatalog-generator.ts -i ./resources-dev/TestFonts.json -o ./test/resources && ts-mocha $EXTRA_MOCHA_ARGS ./test/*Test.ts",
@@ -29,7 +29,7 @@
     "fontkit": "^1.8.0",
     "minimist": "^1.2.0",
     "mkpath": "^1.0.0",
-    "msdf-bmfont-xml": "^2.3.6",
+    "msdf-bmfont-xml": "^2.4.2",
     "unicode-range-json": "^1.0.1"
   },
   "devDependencies": {
