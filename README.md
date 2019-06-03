@@ -1,6 +1,7 @@
 # @here/harp-fontcatalog-generator [![Build Status](https://travis-ci.com/heremaps/harp-fontcatalog-generator.svg?branch=master)](https://travis-ci.com/heremaps/harp-fontcatalog-generator)
 
-This module contains the necessary scripts to generate a font catalog to be used with the `harp.gl` renderer.
+This module contains the necessary scripts and resources to generate a font catalog to be used with the `harp.gl` renderer.
+It includes the [NotoSans-Regular](`resources/NotoSans-Regular.ttf`) font as part of the package because the script uses a glyph from that font as a fallback, in case some glyph from the font that it processes is missing.
 
 For information about coding style or contributing, please refer to the information main project [harp.gl](https://github.com/heremaps/harp.gl).
 
