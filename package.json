@@ -1,6 +1,6 @@
 {
   "name": "@here/harp-fontcatalog-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
     "test": "ts-node ./scripts/harp-fontcatalog-generator.ts -i ./resources-dev/TestFonts.json -o ./test/resources && ts-mocha $EXTRA_MOCHA_ARGS ./test/*Test.ts",
