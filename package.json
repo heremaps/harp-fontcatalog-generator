@@ -10,7 +10,7 @@
   "bin": "./scripts/harp-fontcatalog-generator.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/heremaps/harp-fontcatalog-generator.git"
+    "url": "https://github.com/heremaps/harp-fontcatalog-generator.git"
   },
   "author": {
     "name": "HERE Europe B.V.",
