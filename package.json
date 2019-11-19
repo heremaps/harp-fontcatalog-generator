@@ -3,9 +3,10 @@
   "version": "0.1.2",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
+    "pretest": "ts-node ./scripts/unicode-ranges-generator.ts",
     "test": "ts-node ./scripts/harp-fontcatalog-generator.ts -i ./resources-dev/TestFonts.json -o ./test/resources && ts-mocha $EXTRA_MOCHA_ARGS ./test/*Test.ts",
     "prepare": "tsc --sourceMap false",
-    "prepack": "chmod +x ./scripts/harp-fontcatalog-generator.js"
+    "prepack": "ts-node ./scripts/unicode-ranges-generator.ts && chmod +x ./scripts/harp-fontcatalog-generator.js"
   },
   "bin": "./scripts/harp-fontcatalog-generator.js",
   "repository": {
@@ -29,8 +30,7 @@
     "fontkit": "^1.8.0",
     "minimist": "^1.2.0",
     "mkpath": "^1.0.0",
-    "msdf-bmfont-xml": "^2.4.2",
-    "unicode-range-json": "^1.0.1"
+    "msdf-bmfont-xml": "^2.4.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
