@@ -1883,11 +1883,6 @@ unicode-properties@^1.0.0:
     brfs "^1.4.0"
     unicode-trie "^0.3.0"
 
-unicode-range-json@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/unicode-range-json/-/unicode-range-json-1.0.1.tgz#cb6182045e82ffeeca6c64d62907ec9905745ee8"
-  integrity sha1-y2GCBF6C/+7KbGTWKQfsmQV0Xug=
-
 unicode-trie@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/unicode-trie/-/unicode-trie-0.3.1.tgz#d671dddd89101a08bac37b6a5161010602052085"
