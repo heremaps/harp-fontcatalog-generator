@@ -1,6 +1,6 @@
 {
   "name": "@here/harp-fontcatalog-generator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Scripts used to generate a font catalog for harp.gl",
   "scripts": {
     "pretest": "ts-node ./scripts/unicode-ranges-generator.ts",
